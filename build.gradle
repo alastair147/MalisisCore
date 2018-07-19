@@ -61,7 +61,7 @@ dependencies {
 defaultTasks 'build', 'install'
 
 // Basic project information
-group = 'net.malisis'
+group = 'com.almuradev'
 archivesBaseName = 'malisiscore'
 version = '1.12.2-6.4.2-SNAPSHOT'
 ext.packaging = 'jar'
@@ -192,20 +192,20 @@ artifacts {
 }
 
 // Deployment signing
-signing {
+/*signing {
 	// Check if uploadArchives task is used
 	required { gradle.taskGraph.hasTask("uploadArchives") }
 	
 	// Sign JAR artifacts
 	sign configurations.archives
-}
+}*/
 
 // Artifact deployment
 uploadArchives {
 	repositories.mavenDeployer {
 	
 	 	// Sign Maven POM
-		beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//		beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
 	
 		def username = project.hasProperty('sonatypeUsername') ? project.getProperty('sonatypeUsername') : System.getenv("sonatypeUsername");
 		def password = project.hasProperty('sonatypePassword') ? project.getProperty('sonatypePassword') : System.getenv("sonatypePassword");
