@@ -119,6 +119,18 @@ public class UIBackgroundContainer extends UIContainer<UIBackgroundContainer> im
 	 * @param color the color
 	 * @param size the size
 	 */
+
+	@Override
+	public float getScrollStep() {
+		float contentSize = getContentHeight() - getHeight();
+		float scrollStep = super.getScrollStep() * 1000;
+		float scrollFraction = scrollStep / contentSize;
+		if (Float.isFinite(scrollFraction) && scrollFraction > 0) {
+			return scrollFraction;
+		}
+		return 0;
+	}
+
 	public UIBackgroundContainer setBorder(int color, int size, int alpha)
 	{
 		borderColor = color;
