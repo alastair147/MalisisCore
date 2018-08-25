@@ -7,9 +7,10 @@
   "mcversion": "${mcversion}",
   "url": "${url}",
   "updateUrl": "",
-  "authorList": [ "Ordinastie", "PaleoCrafter" ],
+  "authorList": [ "Ordinastie", "PaleoCrafter", "AlmuraDev" ],
   "logoFile": "malisiscore.png",
   "parent": "",
   "screenshots": [],
-  "dependencies": [ "MinecraftForge" ]
+  "dependencies": [ "MinecraftForge" ],
+  "requiredMods": ["forge@14.23.4.2705"]
 }]
