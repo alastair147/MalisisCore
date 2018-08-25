@@ -32,6 +32,7 @@ import net.malisis.core.client.gui.element.SimpleGuiShape;
 import net.malisis.core.renderer.icon.Icon;
 import net.malisis.core.renderer.icon.provider.GuiIconProvider;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 /**
  * UIImage.
@@ -192,7 +193,9 @@ public class UIImage extends UIComponent<UIImage>
 		}
 		else if (itemStack != null)
 		{
+			GL11.glDisable(GL11.GL_DEPTH_TEST);
 			renderer.drawItemStack(itemStack);
+			GL11.glEnable(GL11.GL_DEPTH_TEST);
 		}
 	}
 
