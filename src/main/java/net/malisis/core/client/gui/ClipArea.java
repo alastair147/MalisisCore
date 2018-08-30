@@ -25,6 +25,7 @@
 package net.malisis.core.client.gui;
 
 import net.malisis.core.client.gui.component.IClipable;
+import net.malisis.core.client.gui.component.control.IScrollable;
 
 public class ClipArea
 {
@@ -46,24 +47,27 @@ public class ClipArea
 
 	public ClipArea(IClipable container, int clipPadding, boolean intersect)
 	{
-		this(container, container.screenX() + clipPadding, container.screenY() + clipPadding, container.screenX() + container.getWidth()
-				- clipPadding, container.screenY() + container.getHeight() - clipPadding, intersect);
+		this.construct(container, clipPadding, clipPadding, clipPadding, clipPadding, intersect);
 	}
 
-	public ClipArea(IClipable container, int x, int y, int X, int Y, boolean intersect)
-	{
-		if (!container.shouldClipContent())
+	public ClipArea(IClipable container, IScrollable scrollable, boolean intersect) {
+		this.construct(container,
+				scrollable.getLeftPadding(), scrollable.getTopPadding(), scrollable.getRightPadding(), scrollable.getBottomPadding(), intersect);
+	}
+
+	private void construct(IClipable container, int left, int top, int right, int bottom, boolean intersect) {
+		if (!container.shouldClipContent()) {
 			this.noClip = true;
-		else
-		{
-			this.x = x;
-			this.y = y;
-			this.X = X;
-			this.Y = Y;
+		} else {
+			this.x = container.screenX() + right;
+			this.y = container.screenY() + bottom;
+			this.X = container.screenX() + container.getWidth() - left;
+			this.Y = container.screenY() + container.getHeight() - top;
 		}
 
-		if (intersect && container.getParent() instanceof IClipable)
+		if (intersect && container.getParent() instanceof IClipable) {
 			this.intersect(((IClipable) container.getParent()).getClipArea());
+		}
 	}
 
 	public void intersect(ClipArea area)
