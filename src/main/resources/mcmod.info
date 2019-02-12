@@ -12,5 +12,5 @@
   "parent": "",
   "screenshots": [],
   "dependencies": [ "MinecraftForge" ],
-  "requiredMods": ["forge@14.23.4.2705"]
+  "requiredMods": ["forge@14.23.5.2768"]
 }]

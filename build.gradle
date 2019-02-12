@@ -82,8 +82,8 @@ targetCompatibility = '1.8'
 
 // MinecraftForge version
 minecraft {
-    version = "1.12.2-14.23.1.2589"
-    mappings = "snapshot_20180114"
+    version = "1.12.2-14.23.5.2768"
+    mappings = 'snapshot_20180808'
 	
 	if(file("../../run").exists()) 
 		runDir = "../../run/assets"

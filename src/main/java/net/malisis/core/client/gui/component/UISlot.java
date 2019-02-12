@@ -122,7 +122,7 @@ public class UISlot extends UIComponent<UISlot>
 												Minecraft.getMinecraft().gameSettings.advancedItemTooltips	? ITooltipFlag.TooltipFlags.ADVANCED
 																											: ITooltipFlag.TooltipFlags.NORMAL);
 
-		lines.set(0, slot.getItemStack().getRarity().rarityColor + lines.get(0));
+		lines.set(0, slot.getItemStack().getRarity().color + lines.get(0));
 		for (int i = 1; i < lines.size(); i++)
 			lines.set(i, TextFormatting.GRAY + lines.get(i));
 
