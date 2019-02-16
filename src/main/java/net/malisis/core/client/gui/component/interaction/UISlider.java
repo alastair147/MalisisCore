@@ -125,6 +125,11 @@ public class UISlider<T> extends UIComponent<UISlider<T>> implements IGuiText<UI
 		return this;
 	}
 
+	public UISlider<T> setHoveredFontOptions(FontOptions fontOptions) {
+		this.hoveredFontOptions = fontOptions;
+		return this;
+	}
+
 	/**
 	 * Sets the value for this {@link UISlider}.
 	 *

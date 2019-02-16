@@ -117,7 +117,7 @@ public abstract class MalisisGui extends GuiScreen
 	/** List of {@link IKeyListener} registered. */
 	protected Set<IKeyListener> keyListeners = new HashSet<>();
 	/** Debug **/
-	private boolean debug = false;
+	protected boolean debug = false;
 	private HashMap<String, Supplier<String>> debugMap = new LinkedHashMap<>();
 
 	protected MalisisGui()
