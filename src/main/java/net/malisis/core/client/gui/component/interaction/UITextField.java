@@ -1498,11 +1498,9 @@ public class UITextField extends UIComponent<UITextField> implements IScrollable
 		private int characterFromX(int x)
 		{
 			final String currentLine = currentLineText();
-			int position = (int) font.getCharPosition(currentLine, fontOptions, x, charOffset);
-			if (currentLine.endsWith("\n") && position == currentLine.length()) {
-				position -= 1;
-			}
-			return position;
+			final String currentLineTrimmed = currentLine.endsWith("\n") ? currentLine.substring(0, currentLine.length() - 1) : currentLine;
+
+			return (int) font.getCharPosition(currentLineTrimmed, fontOptions, x, charOffset);
 		}
 
 		/**
