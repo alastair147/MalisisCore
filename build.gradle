@@ -48,7 +48,7 @@ repositories {
 
 // Project dependencies
 dependencies {
-	    compile('org.spongepowered:mixin:0.7.11-SNAPSHOT') {
+	    compile('org.spongepowered:mixin:0.8-SNAPSHOT') {
         exclude module: 'asm-commons'
         exclude module: 'asm-tree'
         exclude module: 'launchwrapper'
@@ -63,7 +63,7 @@ defaultTasks 'build', 'install'
 // Basic project information
 group = 'com.almuradev'
 archivesBaseName = 'malisiscore'
-version = '1.12.2-6.5.0-SNAPSHOT'
+version = '1.12.2-6.5.2-SNAPSHOT'
 ext.packaging = 'jar'
 
 // Extended project information
