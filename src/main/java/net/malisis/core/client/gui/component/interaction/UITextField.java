@@ -682,7 +682,7 @@ public class UITextField extends UIComponent<UITextField> implements IScrollable
 		if (selectingText)
 			deleteSelectedText();
 
-		final StringBuilder oldText = this.text;
+		final StringBuilder oldText = new StringBuilder(this.text.toString());
 		final String oldValue = this.text.toString();
 		String newValue = oldText.insert(this.cursorPosition.textPosition, str).toString();
 
