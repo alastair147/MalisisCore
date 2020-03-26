@@ -1,6 +1,7 @@
 # Source language and JDK version to use
 language: java
 jdk: oraclejdk8
+dist: trusty
 
 # Compile and package JAR and set build properties
 install: ./gradlew setupCIWorkspace
